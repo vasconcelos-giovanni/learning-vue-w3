@@ -1,47 +1,76 @@
-<script setup>
-import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
-</script>
-
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
-
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-    </div>
-  </header>
-
-  <main>
-    <TheWelcome />
-  </main>
+  <h1>{{ message }}</h1>
+  <button @click="removeItem">Remove Item</button>
+  <div id="wrapper">
+    <food-item v-for="food in foods" :key="food.id" :food-id="food.id" :food-name="food.name" :food-desc="food.desc"
+      :is-favorite="food.favorite" @toggle-Favorite="receiveEmit" />
+  </div>
 </template>
 
-<style scoped>
-header {
-  line-height: 1.5;
+<script>
+// 'export default' makes it possible for 'main.js' to catch the data with the import App from './App.vue' so that it can be mounted on the ''<div id = "app">'' tag inside 'index.html'.
+export default {
+  data() {
+    return {
+      foods: [
+        {
+          id: 1,
+          name: 'Apples',
+          desc: 'Apples are a type of fruit that grow on trees.',
+          favorite: true
+        },
+        {
+          id: 2,
+          name: 'Pizza',
+          desc: 'Pizza has a bread base with tomato sauce, cheese, and toppings on top.',
+          favorite: false
+        },
+        {
+          id: 3,
+          name: 'Rice',
+          desc: 'Rice is a type of grain that people like to eat.',
+          favorite: false
+        },
+        {
+          id: 4,
+          name: 'Fish',
+          desc: 'Fish is an animal that lives in water.',
+          favorite: true
+        },
+        {
+          id: 5,
+          name: 'Cake',
+          desc: 'Cake is something sweet that tastes good.',
+          favorite: false
+        }
+      ]
+    }
+  },
+  methods: {
+    removeItem() {
+      this.foods.splice(1, 1);
+    },
+    receiveEmit(foodId) {
+      const foundFood = this.foods.find(
+        food => food.id === foodId
+      );
+      foundFood.favorite = !foundFood.favorite;
+    }
+  }
+}
+</script>
+
+<style>
+#wrapper {
+  display: flex;
+  flex-wrap: wrap;
 }
 
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
-
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
+#wrapper>div {
+  border: dashed black 1px;
+  flex-basis: 120px;
+  margin: 10px;
+  padding: 10px;
+  background-color: lightgreen;
 }
 </style>
