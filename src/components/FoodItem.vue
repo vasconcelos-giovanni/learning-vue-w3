@@ -59,7 +59,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped="true">
 #red {
     font-weight: bold;
     color: rgb(144, 12, 12);
@@ -68,5 +68,9 @@ export default {
 img {
     height: 1.5em;
     float: right;
+}
+
+p {
+    color: crimson;
 }
 </style>

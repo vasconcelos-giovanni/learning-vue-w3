@@ -1,9 +1,20 @@
 <template>
-  <h1>{{ message }}</h1>
-  <button @click="removeItem">Remove Item</button>
-  <div id="wrapper">
-    <food-item v-for="food in foods" :key="food.id" :food-id="food.id" :food-name="food.name" :food-desc="food.desc"
-      :is-favorite="food.favorite" @toggle-Favorite="receiveEmit" />
+  <div id="to-do-example">
+    <h1>To-do list</h1>
+    <ul>
+      <todo-item v-for="item in items" :key="item" :item-name="item" style="background-color: lightgreen;" />
+    </ul>
+    <input v-model="newItem" />
+    <button @click="addItem">Add</button>
+  </div>
+
+  <div id="foods-example">
+    <h1>{{ message }}</h1>
+    <button @click="removeItem">Remove Item</button>
+    <div id="wrapper">
+      <food-item v-for="food in foods" :key="food.id" :food-id="food.id" :food-name="food.name" :food-desc="food.desc"
+        :is-favorite="food.favorite" @toggle-Favorite="receiveEmit" />
+    </div>
   </div>
 </template>
 
@@ -43,7 +54,9 @@ export default {
           desc: 'Cake is something sweet that tastes good.',
           favorite: false
         }
-      ]
+      ],
+      newItem: '',
+      items: ['Buy apples', 'Make pizza', 'Mow the lawn']
     }
   },
   methods: {
@@ -55,6 +68,10 @@ export default {
         food => food.id === foodId
       );
       foundFood.favorite = !foundFood.favorite;
+    },
+    addItem() {
+      this.items.push(this.newItem),
+        this.newItem = '';
     }
   }
 }
