@@ -1,4 +1,13 @@
 <template>
+  <h1>Dynamic Components</h1>
+  <p>App.vue switches between which component to show.</p>
+  <button @click="toggleValue = !toggleValue">Switch component</button>
+  <KeepAlive>    
+    <component :is="activeComp"></component>
+  </KeepAlive>
+
+  <hr />
+
   <vue-form />
 
   <hr />
@@ -61,6 +70,11 @@ export default {
     'slot-comp': SlotComp,
     'vue-form': VueForm
   },
+  computed: {
+    activeComp() {
+      return (this.toggleValue) ? 'food-slot' : 'vue-form';
+    }
+  },
   data() {
     return {
       foods: [
@@ -96,7 +110,8 @@ export default {
         }
       ],
       newItem: '',
-      items: ['Buy apples', 'Make pizza', 'Mow the lawn']
+      items: ['Buy apples', 'Make pizza', 'Mow the lawn'],
+      toggleValue: true
     }
   },
   methods: {
@@ -113,6 +128,9 @@ export default {
       this.items.push(this.newItem),
         this.newItem = '';
     }
+  },
+  updated() {
+    console.log("This message refers to the value of the dynamic component exersise, the value of toggleValue, which is: " + this.toggleValue);
   }
 }
 </script>
