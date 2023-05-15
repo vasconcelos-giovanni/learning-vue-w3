@@ -9,11 +9,23 @@
   </div>
 
   <div id="foods-example">
-    <h1>{{ message }}</h1>
+    <h1>Foods</h1>
     <button @click="removeItem">Remove Item</button>
     <div id="wrapper">
       <food-item v-for="food in foods" :key="food.id" :food-id="food.id" :food-name="food.name" :food-desc="food.desc"
         :is-favorite="food.favorite" @toggle-Favorite="receiveEmit" />
+    </div>
+  </div>
+
+  <div id="food-slots-example">
+    <h1>Food cards</h1>
+    <div id="wrapper2">
+      <food-slot v-for="food in foods" :key="food.id" :food-id="food.id" :food-name="food.name">
+        <template #topSlot>
+          <h2>{{ food.name }}</h2>
+          <p>{{ food.desc }}</p>
+        </template>
+      </food-slot>
     </div>
   </div>
 </template>
@@ -89,5 +101,13 @@ export default {
   margin: 10px;
   padding: 10px;
   background-color: lightgreen;
+}
+
+#wrapper2 div {
+  width: 150px;
+}
+
+#wrapper2 h4 {
+  text-align: center;
 }
 </style>

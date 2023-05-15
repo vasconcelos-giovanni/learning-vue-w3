@@ -69,8 +69,4 @@ img {
     height: 1.5em;
     float: right;
 }
-
-p {
-    color: crimson;
-}
 </style>
