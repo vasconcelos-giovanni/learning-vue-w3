@@ -1,8 +1,16 @@
 <template>
+  <p>The former next paragraph of here was teleported to &lt;body&gt; (page end).</p>
+  <Teleport to="body">
+    <hr />
+    <p :style="teleportP">Giovanni is learning Vue!</p>
+  </Teleport>
+
+  <hr />
+
   <h1>Dynamic Components</h1>
   <p>App.vue switches between which component to show.</p>
   <button @click="toggleValue = !toggleValue">Switch component</button>
-  <KeepAlive>    
+  <KeepAlive>
     <component :is="activeComp"></component>
   </KeepAlive>
 
@@ -111,7 +119,8 @@ export default {
       ],
       newItem: '',
       items: ['Buy apples', 'Make pizza', 'Mow the lawn'],
-      toggleValue: true
+      toggleValue: true,
+      teleportP: 'font-weight: bold; color: blue;'
     }
   },
   methods: {
