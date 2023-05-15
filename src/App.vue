@@ -1,4 +1,8 @@
 <template>
+  <vue-form />
+
+  <hr />
+
   <slot-comp>
     <template v-slot="dataFromSlot">
       <h3>{{ dataFromSlot.giovanni }} and {{ dataFromSlot.home }} is his home.</h3>
@@ -10,6 +14,8 @@
     </template>
   </slot-comp>
 
+  <hr />
+
   <div id="to-do-example">
     <h1>To-do list</h1>
     <ul>
@@ -19,6 +25,8 @@
     <button @click="addItem">Add</button>
   </div>
 
+  <hr />
+
   <div id="foods-example">
     <h1>Foods</h1>
     <button @click="removeItem">Remove Item</button>
@@ -27,6 +35,8 @@
         :is-favorite="food.favorite" @toggle-Favorite="receiveEmit" />
     </div>
   </div>
+
+  <hr />
 
   <div id="food-slots-example">
     <h1>Food cards</h1>
@@ -43,11 +53,13 @@
 
 <script>
 import SlotComp from "./components/SlotComp.vue";
+import VueForm from "./components/VueForm.vue";
 
 // 'export default' makes it possible for 'main.js' to catch the data with the import App from './App.vue' so that it can be mounted on the ''<div id = "app">'' tag inside 'index.html'.
 export default {
   components: {
-    'slot-comp': SlotComp
+    'slot-comp': SlotComp,
+    'vue-form': VueForm
   },
   data() {
     return {
