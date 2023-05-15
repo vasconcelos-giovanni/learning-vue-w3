@@ -1,4 +1,15 @@
 <template>
+  <slot-comp>
+    <template v-slot="dataFromSlot">
+      <h3>{{ dataFromSlot.giovanni }} and {{ dataFromSlot.home }} is his home.</h3>
+      <pre>{{ dataFromSlot }}</pre>
+    </template>
+    <template #namedSlot="dataFromSlot">
+      <h3>{{ dataFromSlot.alicia }} and {{ dataFromSlot.aliciaHome }} is her home.</h3>
+      <pre>{{ dataFromSlot }}</pre>
+    </template>
+  </slot-comp>
+
   <div id="to-do-example">
     <h1>To-do list</h1>
     <ul>
@@ -31,8 +42,13 @@
 </template>
 
 <script>
+import SlotComp from "./components/SlotComp.vue";
+
 // 'export default' makes it possible for 'main.js' to catch the data with the import App from './App.vue' so that it can be mounted on the ''<div id = "app">'' tag inside 'index.html'.
 export default {
+  components: {
+    'slot-comp': SlotComp
+  },
   data() {
     return {
       foods: [
