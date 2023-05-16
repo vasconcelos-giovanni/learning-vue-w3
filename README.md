@@ -1,29 +1,15 @@
-# firstsfc
+# Learning Vue.js at W3 Schools
 
-This template should help get you started developing with Vue 3 in Vite.
+With the *W3 Schools Vue.js* course I have been able to get a general overview of the framework and learn the basics of it.
 
-## Recommended IDE Setup
+This repository was made for testing Vue.js while I was first studying it.
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+## Featured
 
-## Customize configuration
+With my study and the exercises, I have gotten to learn:
+- To build **SPA** (Single Page Application) with Vue.js SFC (Single-File Components);
+- To make client-side routing with **Vue Routing** library;
+- To use **Axios library** for HTTP requesting;
+- To use **Lifecycle Hooks**.
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
-
-## Project Setup
-
-```sh
-npm install
-```
-
-### Compile and Hot-Reload for Development
-
-```sh
-npm run dev
-```
-
-### Compile and Minify for Production
-
-```sh
-npm run build
-```
+> As it is only a testing repository, it was not intended to be well-organized or clean-coded.
