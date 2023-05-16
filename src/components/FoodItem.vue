@@ -1,5 +1,5 @@
 <template>
-    <div v-on:click="countClicks">
+    <div @click="countClicks">
         <h2>{{ foodName }}
             <img src="/img_quality.svg" v-show="isFavorite">
         </h2>

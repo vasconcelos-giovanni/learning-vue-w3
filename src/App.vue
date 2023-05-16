@@ -114,7 +114,7 @@ export default {
           id: 1,
           name: 'Apples',
           desc: 'Apples are a type of fruit that grow on trees.',
-          favorite: true
+          favorite: false
         },
         {
           id: 2,
@@ -126,7 +126,7 @@ export default {
           id: 3,
           name: 'Rice',
           desc: 'Rice is a type of grain that people like to eat.',
-          favorite: false
+          favorite: true
         },
         {
           id: 4,
@@ -146,14 +146,14 @@ export default {
       toggleValue: true,
       teleportP: 'font-weight: bold; color: blue;',
       fetchedData
-        : null,
-      foods: [
-        { name: 'Pizza' },
-        { name: 'Apple' },
-        { name: 'Cake' },
-        { name: 'Fish' },
-        { name: 'Rice' }
-      ]
+        : null
+      // foods: [
+      //   { name: 'Pizza' },
+      //   { name: 'Apple' },
+      //   { name: 'Cake' },
+      //   { name: 'Fish' },
+      //   { name: 'Rice' }
+      // ]
     }
   },
   methods: {
@@ -164,6 +164,7 @@ export default {
       const foundFood = this.foods.find(
         food => food.id === foodId
       );
+      console.log('FOUND FOOD: ' + foundFood.name);
       foundFood.favorite = !foundFood.favorite;
     },
     addItem() {
