@@ -13,3 +13,7 @@ With my study and the exercises, I have gotten to learn:
 - To use **Lifecycle Hooks**.
 
 > As it is only a testing repository, it was not intended to be well-organized or clean-coded.
+
+## About the course
+
+Available in: [Vue Tutorial](w3schools.com/vue)
