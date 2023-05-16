@@ -6,11 +6,12 @@
 
   <div>
     <button @click="fetchDataWithFetch">Fetch data with fetch</button>
-    <p v-if="fetchedFileWithFetch">
-      {{ fetchedFileWithFetch }}
+    <button @click="fetchDataWithAxios">Fetch data with Axios</button>
+    <p v-if="fetchedData">
+      {{ fetchedData }}
     </p>
     <p v-else>
-      Nothing fetched.
+      Nothing fetched yet.
     </p>
   </div>
 
@@ -86,9 +87,11 @@
 </template>
 
 <script>
-import SlotComp from "./components/SlotComp.vue";
-import VueForm from "./components/VueForm.vue";
-import FoodKinds from "./components/FoodKinds.vue";
+import axios from 'axios';
+
+import SlotComp from './components/SlotComp.vue';
+import VueForm from './components/VueForm.vue';
+import FoodKinds from './components/FoodKinds.vue';
 
 // 'export default' makes it possible for 'main.js' to catch the data with the import App from './App.vue' so that it can be mounted on the ''<div id = "app">'' tag inside 'index.html'.
 export default {
@@ -140,7 +143,8 @@ export default {
       items: ['Buy apples', 'Make pizza', 'Mow the lawn'],
       toggleValue: true,
       teleportP: 'font-weight: bold; color: blue;',
-      fetchedFileWithFetch: null,
+      fetchedData
+        : null,
       foods: [
         { name: 'Pizza' },
         { name: 'Apple' },
@@ -165,9 +169,21 @@ export default {
         this.newItem = '';
     },
     async fetchDataWithFetch() {
-      let file = await fetch('https://random-data-api.com/api/v2/users');
-      file = await file.json();
-      this.fetchedFileWithFetch = `${file.first_name} ${file.last_name}\'s name was fetched with \"fetch()\" and \"await\".`;
+      let data = await fetch('https://random-data-api.com/api/v2/users');
+      data = await data.json();
+      this.fetchedData = `${data.first_name} ${data.last_name}\'s name was fetched with \"fetch()\" and \"await\".`;
+    },
+    fetchDataWithAxios() {
+      axios.get('https://random-data-api.com/api/v2/users')
+        .then(
+          randomUser => this.fetchedData = `${randomUser.data.first_name} ${randomUser.data.last_name}\'s name was fetched with Axios and \"then\".`
+        )
+        .catch(
+          error => {
+            console.log(error);
+            this.fetchedData = 'Something  went wrong and nothing was fetched.'
+          }
+        );
     }
   },
   provide() {
