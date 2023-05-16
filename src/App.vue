@@ -1,4 +1,16 @@
 <template>
+  <div>
+    <button @click="fetchDataWithFetch">Fetch data with fetch</button>
+    <p v-if="fetchedFileWithFetch">
+      {{ fetchedFileWithFetch }}
+    </p>
+    <p v-else>
+      Nothing fetched.
+    </p>
+  </div>
+
+  <hr />
+
   <p>The former next paragraph of here was teleported to &lt;body&gt; (page end).</p>
   <Teleport to="body">
     <hr />
@@ -120,7 +132,8 @@ export default {
       newItem: '',
       items: ['Buy apples', 'Make pizza', 'Mow the lawn'],
       toggleValue: true,
-      teleportP: 'font-weight: bold; color: blue;'
+      teleportP: 'font-weight: bold; color: blue;',
+      fetchedFileWithFetch: null
     }
   },
   methods: {
@@ -136,6 +149,11 @@ export default {
     addItem() {
       this.items.push(this.newItem),
         this.newItem = '';
+    },
+    async fetchDataWithFetch() {
+      let file = await fetch('https://random-data-api.com/api/v2/users');
+      file = await file.json();
+      this.fetchedFileWithFetch = `${file.first_name} ${file.last_name}\'s name was fetched with \"fetch()\" and \"await\".`;
     }
   },
   updated() {
