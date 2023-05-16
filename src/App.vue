@@ -1,4 +1,9 @@
 <template>
+  <h1>Food Kinds (Provide/Inject)</h1>
+  <food-kinds />
+
+  <hr />
+
   <div>
     <button @click="fetchDataWithFetch">Fetch data with fetch</button>
     <p v-if="fetchedFileWithFetch">
@@ -83,12 +88,14 @@
 <script>
 import SlotComp from "./components/SlotComp.vue";
 import VueForm from "./components/VueForm.vue";
+import FoodKinds from "./components/FoodKinds.vue";
 
 // 'export default' makes it possible for 'main.js' to catch the data with the import App from './App.vue' so that it can be mounted on the ''<div id = "app">'' tag inside 'index.html'.
 export default {
   components: {
     'slot-comp': SlotComp,
-    'vue-form': VueForm
+    'vue-form': VueForm,
+    'food-kinds': FoodKinds
   },
   computed: {
     activeComp() {
@@ -133,7 +140,14 @@ export default {
       items: ['Buy apples', 'Make pizza', 'Mow the lawn'],
       toggleValue: true,
       teleportP: 'font-weight: bold; color: blue;',
-      fetchedFileWithFetch: null
+      fetchedFileWithFetch: null,
+      foods: [
+        { name: 'Pizza' },
+        { name: 'Apple' },
+        { name: 'Cake' },
+        { name: 'Fish' },
+        { name: 'Rice' }
+      ]
     }
   },
   methods: {
@@ -154,6 +168,11 @@ export default {
       let file = await fetch('https://random-data-api.com/api/v2/users');
       file = await file.json();
       this.fetchedFileWithFetch = `${file.first_name} ${file.last_name}\'s name was fetched with \"fetch()\" and \"await\".`;
+    }
+  },
+  provide() {
+    return {
+      foods: this.foods
     }
   },
   updated() {
