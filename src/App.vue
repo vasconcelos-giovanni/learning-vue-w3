@@ -1,4 +1,6 @@
 <template>
+  <router-view></router-view>
+
   <h1>Food Kinds (Provide/Inject)</h1>
   <food-kinds />
 
