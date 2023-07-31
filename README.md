@@ -1,19 +1,36 @@
-# Learning Vue.js at W3 Schools
+# Learning Vue at W3
 
-With the *W3 Schools Vue.js* course I have been able to get a general overview of the framework and learn the basics of it.
+## Live Demo
 
-This repository was made for testing Vue.js while I was first studying it.
+Check out the live demo: [Learning Vue at W3](https://vasconcelos-giovanni.github.io/learning-vue-w3/)
 
-## Featured
+## 📌  Project idea
 
-With my study and the exercises, I have gotten to learn:
-- To build **SPA** (Single Page Application) with Vue.js SFC (Single-File Components);
-- To make client-side routing with **Vue Routing** library;
-- To use **Axios** library for HTTP requesting;
-- To use **Lifecycle Hooks**.
+Welcome to my "Learning Vue at W3" repository! Through the W3 Schools Vue.js course, I had the fantastic opportunity to gain a comprehensive understanding of the Vue.js framework and grasp its fundamentals.
 
-> As it is only a testing repository, it was not intended to be well-organized or clean-coded.
+This repository was created specifically for experimenting and testing Vue.js concepts as I embarked on my journey of learning this powerful JavaScript framework.
 
-## About the course
+## 🔧 Technologies
 
-Available in: [Vue Tutorial](w3schools.com/vue)
+![Vue.js](https://img.shields.io/badge/vuejs-%2335495e.svg?style=for-the-badge&logo=vuedotjs&logoColor=%234FC08D)
+![Bootstrap](https://img.shields.io/badge/bootstrap-%23563D7C.svg?style=for-the-badge&logo=bootstrap&logoColor=white)
+
+## 🏗️ Development Details
+
+As this repository serves primarily as a testing ground for Vue.js, it may not adhere to strict organization or clean coding practices. The focus here is on exploration and learning.
+
+## 📚 My learning Journey
+
+Through my dedicated study and hands-on exercises, I have achieved the following milestones in my Vue.js learning journey:
+
+📌 Proficiency in using the Vue.js Options API.
+
+📌 Building dynamic SPA (Single Page Applications) using Vue.js SFC (Single-File Components).
+
+📌 Implementing client-side routing with the Vue Router library.
+
+📌 Utilizing the Axios library for smooth HTTP requesting.
+
+📌 Understanding and effectively leveraging Lifecycle Hooks for enhanced application functionality.
+
+This repository showcases my progress and growth in Vue.js as I continue my journey to become a proficient Vue.js developer.
