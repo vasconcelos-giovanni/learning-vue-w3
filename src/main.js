@@ -13,7 +13,7 @@ import Routed from "./components/Routed.vue";
 
 const router = createRouter({
   history: createWebHistory(),
-  base: "/learning-vue-w3/",
+  base: "https://vasconcelos-giovanni.github.io/learning-vue-w3/",
   routes: [{ path: "/routed", component: Routed }],
 });
 
