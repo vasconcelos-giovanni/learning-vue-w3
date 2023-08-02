@@ -13,8 +13,8 @@ import Routed from "./components/Routed.vue";
 
 const router = createRouter({
   history: createWebHistory(),
-  base: "/learning-vue-w3/",
-  routes: [{ path: "/routed", component: Routed }],
+  base: process.env.BASE_URL,
+  routes: [{ path: "/", component: Routed }],
 });
 
 const app = createApp(App);
