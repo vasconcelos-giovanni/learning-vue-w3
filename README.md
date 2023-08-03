@@ -2,7 +2,7 @@
 
 ## Live Demo
 
-Check out the live demo: [Learning Vue at W3](https://vasconcelos-giovanni.github.io/learning-vue-w3/)
+Check out the live demo here: [Learning Vue at W3](https://vasconcelos-giovanni.github.io/learning-vue-w3/)
 
 ## 📌  Project idea
 
