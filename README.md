@@ -1,14 +1,15 @@
 # Learning Vue at W3
 
-## Live Demo
-
-Check out the live demo here: [Learning Vue at W3](https://vasconcelos-giovanni.github.io/learning-vue-w3/)
-
 ## 📌  Project idea
 
 Welcome to my "Learning Vue at W3" repository! Through the W3 Schools Vue.js course, I had the fantastic opportunity to gain a comprehensive understanding of the Vue.js framework and grasp its fundamentals.
 
 This repository was created specifically for experimenting and testing Vue.js concepts as I embarked on my journey of learning this powerful JavaScript framework.
+
+
+## 💿 Live Demo
+
+Check out the live demo here: [Learning Vue at W3](https://vasconcelos-giovanni.github.io/learning-vue-w3/)
 
 ## 🔧 Technologies
 
